@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namanpreet Portfolio</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation */
+header {
+    background: #333;
+    padding: 1rem;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Home Section */
+.home {
+    background: #34;
+    color: white;
+    text-align: center;
+    padding: 100px 20px 60px;
+}
+
+button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #21618c;
+}
+
+/* About Section */
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.about-content img {
+    width: 200px;
+    border-radius: 50%;
+    margin-right: 30px;
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.skill {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills h3 {
+    color: #3498db;
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.project {
+    text-align: center;
+    width: 45%;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+    margin-top: 15px;
+    color: #3498db;
+}
+
+/* Contact Section */
+form {
+    background-color: #fff;
+    padding: 40px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+@media (max-width: 768px) {
+    .skills, .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+    .project, .skill {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+    </style>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        }
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    if (!email.includes('@') || message.trim() === '') {
+        e.preventDefault();
+        alert('Please provide valid email and message.');
+    }
+});
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section home">
+        <div class="container">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hello! I'm <strong>Your Name</strong>, an enthusiastic and dedicated web developer passionate about creating beautiful, functional websites.</p>
+            <button onclick="scrollToSection('about')">Discover More About Me</button>
+        </div>
+        
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="assets/images/profile.jpg" alt="Profile Picture">
+            <p>I’m an energetic, creative web developer with an unrelenting passion for learning and mastering new technologies. I specialize in building responsive, user-friendly websites with a focus on clean, maintainable code.</p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>HTML</h3>
+            </div>
+            <div class="skill">
+                <h3>CSS</h3>
+            </div>
+            <div class="skill">
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill">
+                <h3>Node.js</h3>
+            </div>
+            <div class="skill">
+                <h3>React</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="assets/images/project1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>A creative and functional project that showcases my frontend development skills.</p>
+            </div>
+            <div class="project">
+                <img src="assets/images/project2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>This project demonstrates my ability to build dynamic and interactive web applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Your Name | All Rights Reserved</p>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
